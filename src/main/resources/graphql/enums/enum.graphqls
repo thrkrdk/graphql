@@ -1,0 +1,7 @@
+enum ROLEENUM {
+    USER
+    ADMIN
+    TESTER
+    DBA
+    APP_ADMIN
+}

@@ -1,0 +1,26 @@
+type Role {
+    id: ID!
+    name: String
+    user: User
+    userId: Int
+}
+
+input RoleInput {
+    id: ID
+    name: String
+    user: UserInput
+    userId: Int
+}
+
+extend type Query {
+    # Use for retrieve role  information with given id
+    roleById(id: ID): Role
+    # To retrieve all roles. Users with Admin role can use
+    allRoles:[Role!]
+}
+
+extend type Mutation {
+    # create new role
+    createRole(input: RoleInput): Role
+}
+

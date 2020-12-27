@@ -1,0 +1,30 @@
+type User{
+    id: ID!
+    firstName: String
+    lastName: String
+    email: String
+    roles: [Role!]
+    roles2: [Role!]
+    birthDate: Date
+}
+
+input UserInput{
+    id: ID!
+    firstName: String
+    lastName: String
+    email: String
+    roles:[RoleInput]
+}
+
+
+extend type Query {
+    # To retrieve all Users. Users with Admin role can use
+    allUser: [User!]
+    # To retrieve user information with user email.
+    userByEmail(email:String): User
+}
+
+extend type Mutation {
+    # creates new user for the role
+    createUser(input: UserInput):User
+}

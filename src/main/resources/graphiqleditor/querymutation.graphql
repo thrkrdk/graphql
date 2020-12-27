@@ -1,0 +1,66 @@
+# Get User
+query GET_USER($email: String = "ali.veli@maria") {
+    userByEmail(email: $email){
+        id
+        firstName
+    }
+}
+
+# All user
+query GET_ALLUSER {
+    allUser {
+        id
+        firstName
+        lastName
+    }
+}
+
+
+# Get all User
+query GET_USER_ALL_USER($email: String,  $withRoles: Boolean =false ) {
+    userByEmail(email: $email){
+        id
+        firstName
+        roles @include(if: $withRoles){
+            name
+        }
+    }
+
+    allUser{
+        id
+        firstName
+        lastName
+    }
+}
+
+# Create user
+mutation CREATE_USER {
+    createUser(input: { id: 4 firstName: "Deneme" lastName: "DNM" email: "1@1.1" }){
+        id
+        firstName
+        lastName
+    }
+}
+#GetRole
+query GET_ROLE($roleId: ID) {
+    roleById(id: $roleId){
+        id
+        name
+    }
+
+    allRoles{
+        id
+        name
+    }
+}
+
+
+# Create role
+mutation CREATE_ROLE {
+    createRole(input: { id: 10  name: "ANALIST" userId: 4}){
+        id
+        name
+    }
+}
+
+

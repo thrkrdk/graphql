@@ -1,0 +1,54 @@
+# Database
+server:
+  port: 3002
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+
+# Client Info
+client:
+  url: http://localhost:3002/api
+
+# graphql
+graphql:
+  servlet:
+    maxQueryDepth: 100
+    exception-handlers-enabled: true
+    tracingEnabled: false
+
+# graphiql
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql
+    subscriptions: /subscriptions
+  subscriptions:
+    timeout: 30
+    reconnect: false
+  static:
+    basePath: /
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+    enabled: false
+    version: 0.13.0
+  props:
+    resources:
+      query: graphiqleditor/querymutation.graphql
+      variables: graphiqleditor/variables.json
+    variables:
+      editorTheme: "solarized light"
+
+

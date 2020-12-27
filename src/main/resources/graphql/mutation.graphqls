@@ -1,0 +1,9 @@
+scalar NonNegativeInt
+scalar DateTime
+scalar Date# All mutations available in graphql
+scalar NonNegativeFloat
+scalar Time
+
+type Mutation {
+    # register new role and user
+}
