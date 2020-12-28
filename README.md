@@ -1,11 +1,10 @@
 # Springboot Graphql
-
-##### by Tahir KARDAK
-
+ [GraphQL ve Spring Boot ile API sorgulama](https://thrkardak.medium.com/graphql-springboot-ile-api-sorgulama-63fa6170ce0e) makalesine ait kaynak kodlardır
+ 
 
 
 ### Running Instruction
- - install Java 11 [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)  
+ - install Java 15 [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)  
 
  - install maven [here](https://maven.apache.org/install.html)
 
