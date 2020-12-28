@@ -33,6 +33,6 @@ public class UserResolver implements GraphQLResolver<User> {
         final DataLoader<Long, List<Role>> dataloader = dfe.getDataLoaderRegistry()
                 .getDataLoader("userRoleDataLoader");
 
-        return dataloader.load(user.getId());
+        return dataloader.load(user.getId(), user);
     }
 }
